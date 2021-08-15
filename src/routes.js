@@ -10,7 +10,7 @@ import MessageUserController from './app/controllers/Message/MessageUserControll
 import MessageWorkerController from './app/controllers/Message/MessageWorkerController';
 import MessageRemoveController from './app/controllers/Message/MessageRemoveController';
 import MessageUpdateController from './app/controllers/Message/MessageUpdateController';
-// import NotificationController from './app/controllers/NotificationController';
+
 import SessionController from './app/controllers/SessionController';
 import SignatureController from './app/controllers/SignatureController';
 
@@ -30,8 +30,6 @@ import TaskWorkerUnfinishedController from './app/controllers/Task/TaskWorkerUnf
 import TaskWorkerCanceledController from './app/controllers/Task/TaskWorkerCanceledController';
 import TaskWorkerCountController from './app/controllers/Task/TaskWorkerCountController';
 
-import UserContactListController from './app/controllers/User/UserContactListController';
-// import UserContactListRemoveController from './app/controllers/User/UserContactListRemoveController';
 import UserController from './app/controllers/User/UserController';
 import UserFollowingController from './app/controllers/User/UserFollowingController';
 import UserFollowingCountController from './app/controllers/User/UserFollowingCountController';
@@ -89,7 +87,6 @@ routes.delete('/tasks/:id', TaskController.delete);
 
 routes.post('/users', UserController.store);
 routes.post('/users/:id/following', UserFollowingController.store);
-routes.get('/users/:id/contact-list', UserContactListController.index);
 routes.get('/users/:id/following', UserFollowingController.index);
 routes.get('/users/:id/following/count', UserFollowingCountController.index);
 routes.get(
@@ -112,10 +109,6 @@ routes.put('/workers/:id/notifications', WorkerNotificationController.update);
 
 // routes.get('/messages/tfeed', TaskFeedMobileController.index);
 // routes.put('/tasks/:id/tfeed/comment', T_FeedController.update);
-// routes.get('/notifications', NotificationController.index);
-// routes.put('/notifications/:id', NotificationController.update);
-// routes.post('/signatures', upload.single('signature'), SignatureController.store);
-// routes.post('/files', upload.single('file'), FileController.store);
 
 routes.post('/signatures', SignatureController.store);
 routes.get('/signatures', SignatureController.index);
@@ -125,15 +118,12 @@ routes.get('/files', FileController.index);
 // -----------------------------------------------------------------------------
 routes.use(authMiddleware);
 // -----------------------------------------------------------------------------
-// routes.post('/users/:id/contact-list', UserContactListController.store);
+
 routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 routes.put('/users/:id/notifications', UserNotificationController.update);
 
-// routes.put('/users/:id/contact-list', UserContactListController.update);
-// routes.put('/users/:id/remove-contact', UserContactListRemoveController.update);
 routes.delete('/users', UserController.delete);
-routes.delete('/users/:id/contact-list', UserContactListController.delete);
 
 routes.delete('/workers', WorkerController.delete);
 
