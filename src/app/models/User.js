@@ -15,7 +15,7 @@ class User extends Model {
         email: Sequelize.STRING,
         birth_date: Sequelize.STRING,
         gender: Sequelize.STRING,
-        bio: Sequelize.STRING,
+        bio: Sequelize.STRING(2200),
         instagram: Sequelize.STRING,
         linkedin: Sequelize.STRING,
         notification_token: Sequelize.STRING,
@@ -44,11 +44,11 @@ class User extends Model {
       foreignKey: 'user_id',
       otherKey: 'worker_id',
     });
-  };
+  }
 
   checkPassword(password) {
     return bcrypt.compare(password, this.password_hash);
-  };
-};
+  }
+}
 
 export default User;

@@ -122,7 +122,6 @@ routes.use(authMiddleware);
 routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 routes.put('/users/:id/notifications', UserNotificationController.update);
-
 routes.delete('/users', UserController.delete);
 
 routes.delete('/workers', WorkerController.delete);

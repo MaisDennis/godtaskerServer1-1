@@ -3,9 +3,7 @@ import Sequelize, { Model } from 'sequelize';
 class UserWorkers extends Model {
   static init(sequelize) {
     super.init(
-      {
-
-      },
+      {},
       {
         sequelize,
       }
@@ -14,8 +12,16 @@ class UserWorkers extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.User, { through: 'UserWorkers', foreignKey: 'user_id', as: 'user' });
-    this.belongsToMany(models.Worker, { through: 'UserWorkers', foreignKey: 'worker_id', as: 'worker' });
+    this.belongsToMany(models.User, {
+      through: 'UserWorkers',
+      foreignKey: 'user_id',
+      as: 'user',
+    });
+    this.belongsToMany(models.Worker, {
+      through: 'UserWorkers',
+      foreignKey: 'worker_id',
+      as: 'worker',
+    });
   }
 }
 

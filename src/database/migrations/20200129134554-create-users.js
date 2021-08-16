@@ -47,7 +47,7 @@ module.exports = {
         allowNull: false,
       },
       bio: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(2200),
         allowNull: true,
       },
       instagram: {

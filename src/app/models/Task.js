@@ -5,7 +5,7 @@ class Task extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        description: Sequelize.STRING(1234),
+        description: Sequelize.STRING(2200),
         sub_task_list: Sequelize.JSON,
         task_attributes: Sequelize.JSON,
         messages: Sequelize.JSON,

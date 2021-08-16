@@ -34,7 +34,7 @@ module.exports = {
         allowNull: false,
       },
       description: {
-        type: Sequelize.STRING(1234),
+        type: Sequelize.STRING(2200),
         allowNull: true,
       },
       sub_task_list: {

@@ -13,7 +13,7 @@ class Worker extends Model {
         email: Sequelize.STRING,
         birth_date: Sequelize.STRING,
         gender: Sequelize.STRING,
-        bio: Sequelize.STRING,
+        bio: Sequelize.STRING(2200),
         instagram: Sequelize.STRING,
         linkedin: Sequelize.STRING,
         notification_token: Sequelize.STRING,
@@ -37,7 +37,7 @@ class Worker extends Model {
       foreignKey: 'worker_id',
       otherKey: 'user_id',
     });
-  };
-};
+  }
+}
 
 export default Worker;
