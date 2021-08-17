@@ -17,7 +17,7 @@ class FileController {
         // If Success
         const imageName = req.file.key;
         const imageLocation = req.file.location;
-        File.create({ name: imageName, path: imageLocation, });
+        File.create({ name: imageName, path: imageLocation });
         // Save the file name into database into profile model
         res.json({
           image: imageName,
@@ -26,6 +26,7 @@ class FileController {
       }
     });
   }
+
   // ---------------------------------------------------------------------------
   async index(req, res) {
     const { image } = req.query;

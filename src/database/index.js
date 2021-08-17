@@ -9,7 +9,6 @@ import Message from '../app/models/Message';
 import Signature from '../app/models/Signature';
 import databaseConfig from '../config/database';
 // import serviceAccount from '~/config/godtasker-development-firebase-adminsdk-fro05-5617c89965.json'
-
 require('dotenv').config();
 
 const models = [User, Worker, File, Task, Message, Signature];
